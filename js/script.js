@@ -14,3 +14,12 @@ function enviarFormulario(event) {
     document.getElementById("mensagem-confirmacao").innerHTML = mensagem;
 
 }
+
+function mostrarFatoGato() {
+    fetch("https://catfact.ninja/fact")
+    .then(resposta => resposta.json())
+    .then(dados => {
+        document.getElementById("fato-gato").innerText = dados.fact;        
+    })
+    .catch(erro => console.error("Erro ao buscar fato do gato: ", erro));
+}
