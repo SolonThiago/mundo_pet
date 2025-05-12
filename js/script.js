@@ -23,3 +23,14 @@ function mostrarFatoGato() {
     })
     .catch(erro => console.error("Erro ao buscar fato do gato: ", erro));
 }
+
+function mostrarImagemCachorro() {
+    fetch("https://dog.ceo/api/breeds/image/random")
+    .then(resposta => resposta.json())
+    .then(dados => {
+        document.getElementById('imagem-cachorro').src = dados.message;
+    })
+    .catch(erro => console.error("Erro ao buscar imagem do cachorro: ", erro));
+}
+
+mostrarImagemCachorro();
